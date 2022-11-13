@@ -79,7 +79,9 @@ const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => {
         className="bg-white shadow-md rounded-lg py-8 px-5"
         onSubmit={handleSubmit}
       >
-        {error && <Alerta mensaje="Todos los campos son obligatorios" />}
+        <div className="hidden md:block">
+          {error && <Alerta mensaje="Todos los campos son obligatorios" />}
+        </div>
         <div className="mb-5">
           <label
             className="block text-gray-700 uppercase font-bold"
@@ -182,6 +184,10 @@ const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => {
               setSintomas(event.target.value);
             }}
           />
+        </div>
+
+        <div className="md:hidden">
+          {error && <Alerta mensaje="Todos los campos son obligatorios" />}
         </div>
 
         <input
